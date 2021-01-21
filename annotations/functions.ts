@@ -32,4 +32,9 @@ const logWeather = (forecast: { date: Date, weather: string }): void => {
   console.log(forecast.weather);
 };
 
+const logWeatherDestructuring = ({ date, weather }: { date: Date, weather: string }): void => {
+  console.log(date);
+  console.log(weather);
+};
+
 logWeather(todayWeather);
