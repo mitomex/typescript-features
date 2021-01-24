@@ -12,3 +12,10 @@ pepsi[0] = 40; // Type Annotation が無いと壊れてしまう
 type Drink = [string, boolean, number]; // 配列ではない
 const sprite: Drink = ['clear', true, 40];
 const tea: Drink = ['brown', false, 0];
+
+const carSpecs: [number, number] = [400, 3354];
+
+const carStas = {
+  horsepower: 400,
+  weight: 3354
+};
