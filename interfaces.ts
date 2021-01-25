@@ -21,6 +21,17 @@ const oldCivic = {
   }
 };
 
+// なぜ Reportable という Interface の名前にしたのか？
+// の例。全く異なるオブジェクトだが summary() は共通
+const drink = {
+  color: 'brown',
+  carbonated: true,
+  sugar: 40,
+  summary(): string {
+    return `My drink has ${this.sugar} grams of sugar`;
+  }
+};
+
 // 引数にオブジェクトを受け取る場合、 Type Annotation が長くなりみづらい
 // const printViecle = (vehicle: { name: string; year: number; broken: boolean }): void => {
 //   console.log(`Name: ${vehicle.name}`);
@@ -34,6 +45,7 @@ const printViecle = (vehicle: Vehicle): void => {
 };
 
 // より汎用的な名前に変更
+// civic でも drink でも使える
 const printSummary = (item: Reportable): void => {
   console.log(item.summary());
 }
@@ -41,3 +53,4 @@ const printSummary = (item: Reportable): void => {
 printViecle(oldCivic);
 
 printSummary(oldCivic);
+printSummary(drink);
