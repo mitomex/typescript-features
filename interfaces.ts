@@ -48,7 +48,7 @@ const printViecle = (vehicle: Vehicle): void => {
 // civic でも drink でも使える
 const printSummary = (item: Reportable): void => {
   console.log(item.summary());
-}
+};
 
 printViecle(oldCivic);
 
