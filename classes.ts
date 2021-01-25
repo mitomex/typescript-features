@@ -1,9 +1,5 @@
 class Vehicle {
-  drive(): void {
-    console.log('chugga chugga');
-  }
-
-  honk(): void {
+  protected honk(): void {
     console.log('beep');
   }
 }
@@ -12,8 +8,16 @@ class Vehicle {
 // メソッドをコピペせずに使える
 class Car extends Vehicle {
   // メソッドの上書きも可能
-  drive(): void {
+  private drive(): void {
     console.log('vroom');
+  }
+
+  startDriveProcesses(): void {
+    this.drive();
+  }
+
+  startHonkProcesses(): void {
+    this.honk();
   }
 }
 
@@ -24,3 +28,4 @@ vehicle.honk();
 const car = new Car();
 car.drive();
 car.honk();
+car.startDriveProcesses();
