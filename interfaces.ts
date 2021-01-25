@@ -5,6 +5,13 @@ interface Vehicle {
   summary(): string;
 }
 
+// summary() しか使わないのであれば
+// summary() のみの interface も可能
+// 他にプロパティがあっても大丈夫
+interface Reportable {
+  summary(): string;
+}
+
 const oldCivic = {
   name: 'civic',
   year: new Date(),
@@ -26,4 +33,11 @@ const printViecle = (vehicle: Vehicle): void => {
   console.log(vehicle.summary());
 };
 
+// より汎用的な名前に変更
+const printSummary = (item: Reportable): void => {
+  console.log(item.summary());
+}
+
 printViecle(oldCivic);
+
+printSummary(oldCivic);
