@@ -9,6 +9,10 @@ class Vehicle {
 // クラスの継承
 // メソッドをコピペせずに使える
 class Car extends Vehicle {
+  constructor(public wheels: number, color: string) {
+    super(color);
+  }
+
   // メソッドの上書きも可能
   private drive(): void {
     console.log('vroom');
@@ -23,7 +27,8 @@ class Car extends Vehicle {
   }
 }
 
-const vehicle = new Vehicle('orange');
-console.log(vehicle.color);
+// const vehicle = new Vehicle('orange');
+// console.log(vehicle.color);
 
-// const car = new Car();
+const car = new Car(4, 'red');
+console.log(car.color);
